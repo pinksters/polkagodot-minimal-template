@@ -1,4 +1,16 @@
-[gd_scene format=3 uid="uid://id4rhugigg5v"]
+[gd_scene load_steps=6 format=3 uid="uid://id4rhugigg5v"]
+
+[ext_resource type="Texture2D" uid="uid://cwui61a6tlb6s" path="res://addons/polkagodot/assets/logos/polkadot-logo.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dlkwj8vqxmfne" path="res://addons/polkagodot/ui/asset_management_button/asset_management_button.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cfhdf0o6rdm6e" path="res://addons/polkagodot/ui/wallet_connect_button/wallet_connect_button.tscn" id="3_1bvp3"]
+
+[sub_resource type="Gradient" id="Gradient_7dm0k"]
+colors = PackedColorArray(0, 0, 0, 1, 0.18000486, 0.18000486, 0.18000486, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ig7tw"]
+gradient = SubResource("Gradient_7dm0k")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -7,3 +19,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ig7tw")
+
+[node name="PolkadotLogo" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.23529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ig7tw")
+stretch_mode = 5
+
+[node name="AssetManagementButton" parent="." instance=ExtResource("2_h2yge")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -211.0
+offset_top = 94.0
+offset_right = -11.0
+offset_bottom = 134.0
+grow_horizontal = 0
+
+[node name="WalletConnectButton" parent="." instance=ExtResource("3_1bvp3")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -308.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = 79.0
+grow_horizontal = 0
